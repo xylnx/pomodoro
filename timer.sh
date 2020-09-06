@@ -21,11 +21,11 @@ LONG_BREAK=1800
 POMODOROS_TILL_LONG_BREAK=4
 
 # Filepaths to html notifiers
-SHORT_BREAK_START='/Users/jep/programming/shell_scripts/pomodoro/html/break_start.html'
-SHORT_BREAK_FINISH='/Users/jep/programming/shell_scripts/pomodoro/html/break_finish.html'
-LONG_BREAK_START='/Users/jep/programming/shell_scripts/pomodoro/html/long_break_start.html'
-LONG_BREAK_FINISH='/Users/jep/programming/shell_scripts/pomodoro/html/long_break_finish.html'
-ALL_POMODOROS_FINISHED='/Users/jep/programming/shell_scripts/pomodoro/html/finish.html'
+SHORT_BREAK_START='/home/xy/programming/shell_scripts/pomodoro/html/finish.html'
+SHORT_BREAK_FINISH='/home/xy/programming/shell_scripts/pomodoro/html/break_finish.html'
+LONG_BREAK_START='/home/xy/programming/shell_scripts/pomodoro/html/long_break_start.html'
+LONG_BREAK_FINISH='/home/xy/programming/shell_scripts/pomodoro/html/long_break_finish.html'
+ALL_POMODOROS_FINISHED='/home/xy/programming/shell_scripts/pomodoro/html/finish.html'
 
 # Style output
 ERROR='\033[91m'
