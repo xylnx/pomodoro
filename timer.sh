@@ -94,11 +94,11 @@ pomodoro() {
 short_break() {
   echo_time
   echo -e "${LIGHTBLUE}Take ${SHORT_BREAK} seconds off, my friend.${ENDC}"
-  open $SHORT_BREAK_START
+  firefox $SHORT_BREAK_START
   sleep $SHORT_BREAK
   echo_time
   echo -e "${RED_BOLD}Break is over.${ENDC}\n"
-  open $SHORT_BREAK_FINISH
+  firefox $SHORT_BREAK_FINISH
 }
 
 # Run one long break
@@ -106,11 +106,11 @@ long_break() {
   # Take 30 minutes off
   echo_time
   echo -e "${WARNING}Awesome, you have done ${i} Pomodoros. Take a longer break now${ENDC}!"
-  open $LONG_BREAK_START
+  firefox $LONG_BREAK_START
   sleep $LONG_BREAK
   echo_time
   echo -e "${RED_BOLD}Long break is over. Pomodoro starts.${ENDC}\n"
-  open $LONG_BREAK_FINISH
+  firefox $LONG_BREAK_FINISH
 }
 
 # Ccontrol when to run what
@@ -128,7 +128,7 @@ run_sessions() {
     i=$[$i+1]
   done
   echo "You finished all your pomodoros"
-  open $ALL_POMODOROS_FINISHED
+  firefox $ALL_POMODOROS_FINISHED
   
   # Prompt for input on how to proceed when all pomodoros are finished
   read -r -p "Would you like to go on? [y/n] " input
