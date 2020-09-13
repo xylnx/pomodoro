@@ -21,7 +21,7 @@ LONG_BREAK=1800
 POMODOROS_TILL_LONG_BREAK=4
 
 # Filepaths to html notifiers
-SHORT_BREAK_START='/home/xy/programming/shell_scripts/pomodoro/html/finish.html'
+SHORT_BREAK_START='/home/xy/programming/shell_scripts/pomodoro/html/break_start.html'
 SHORT_BREAK_FINISH='/home/xy/programming/shell_scripts/pomodoro/html/break_finish.html'
 LONG_BREAK_START='/home/xy/programming/shell_scripts/pomodoro/html/long_break_start.html'
 LONG_BREAK_FINISH='/home/xy/programming/shell_scripts/pomodoro/html/long_break_finish.html'
@@ -74,7 +74,7 @@ get_input() {
 get_pomodoro_length() {
   read -r pomodoro_length
   if [[ $pomodoro_length = "" ]]; then 
-    POMODORO=1500
+    POMODORO= $POMODORO
   elif ! [[ $entered_sessions =~ ^[0-9]+$ ]]; then
     printf "The value entered wasn't an integer. Please press enter or type an integer >> "
     get_pomodoro_length
