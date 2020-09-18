@@ -47,14 +47,12 @@ echo_time() {
 
 # Get user input
 ask_for_sessions() {
-  printf "${LIGHTBLUE}Hi, how many Pomodoros would you like to do? (4 is recommended and thus the default)\n${ENDC}"
-  printf "${PINK}Please press enter or type an integer >>${ENDC} "
+  printf "${PINK}How many Pomodoros would you like to do? (default: 4) >> ${ENDC}"
   get_input
 }
 
 ask_for_pomodoro_length() {
-  printf "${LIGHTBLUE}How long should a pomodoro be? (25 Minutes is the default))\n${ENDC}"
-  printf "${PINK}Please press enter or type for how long you would like to study (in Minutes) >>${ENDC} "
+  printf "${LIGHTBLUE}How long should a pomodoro be? (default: 25 min) >> ${ENDC}"
   get_pomodoro_length
 }
 
