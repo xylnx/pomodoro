@@ -72,7 +72,7 @@ get_input() {
 get_pomodoro_length() {
   read -r pomodoro_length
   if [[ $pomodoro_length = "" ]]; then 
-    POMODORO= $POMODORO
+    POMODORO=$POMODORO
   elif ! [[ $entered_sessions =~ ^[0-9]+$ ]]; then
     printf "The value entered wasn't an integer. Please press enter or type an integer >> "
     get_pomodoro_length
