@@ -8,14 +8,14 @@
 # https://en.wikipedia.org/wiki/Pomodoro_Technique
 
 # Define time spans
-POMODORO=1500
-SHORT_BREAK=300
-LONG_BREAK=1800
+# POMODORO=1500
+# SHORT_BREAK=300
+# LONG_BREAK=1800
 
 # Testing
-# POMODORO=1
-# SHORT_BREAK=1
-# LONG_BREAK=1
+POMODORO=1
+SHORT_BREAK=1
+LONG_BREAK=1
 
 # Define sessions before taking a long break
 POMODOROS_TILL_LONG_BREAK=4
@@ -92,11 +92,12 @@ pomodoro() {
 short_break() {
   echo_time
   echo -e "${LIGHTBLUE}Take ${SHORT_BREAK} seconds off, my friend.${ENDC}"
-  firefox $SHORT_BREAK_START
+  # linux: run firefox in background (&) to not pause script execution
+  firefox $SHORT_BREAK_START &
   sleep $SHORT_BREAK
   echo_time
   echo -e "${RED_BOLD}Break is over.${ENDC}\n"
-  firefox $SHORT_BREAK_FINISH
+  firefox $SHORT_BREAK_FINISH &
 }
 
 # Run one long break
@@ -104,14 +105,14 @@ long_break() {
   # Take 30 minutes off
   echo_time
   echo -e "${WARNING}Awesome, you have done ${i} Pomodoros. Take a longer break now${ENDC}!"
-  firefox $LONG_BREAK_START
+  firefox $LONG_BREAK_START &
   sleep $LONG_BREAK
   echo_time
   echo -e "${RED_BOLD}Long break is over. Pomodoro starts.${ENDC}\n"
-  firefox $LONG_BREAK_FINISH
+  firefox $LONG_BREAK_FINISH &
 }
 
-# Ccontrol when to run what
+# control when to run what
 run_sessions() {
   i=1
   while [ $i -le $sessions ]; do
@@ -126,16 +127,18 @@ run_sessions() {
     i=$[$i+1]
   done
   echo "You finished all your pomodoros"
-  firefox $ALL_POMODOROS_FINISHED
+  firefox $ALL_POMODOROS_FINISHED &
   
-  # Prompt for input on how to proceed when all pomodoros are finished
-  read -r -p "Would you like to go on? [y/n] " input
+  # Prompt for input
+  echo "Would you like to go on? [y/n] "
+  read -r input
   
   case $input in
     [yY][eE][sS]|[yY])
       init;;
     [nN][oO]|[nN])
-      echo "Have a good day!";; 
+      echo "Have a good day!"
+      exit 0;;
     *)
       echo "Invalid input. Exiting ..."
       exit 1;;
