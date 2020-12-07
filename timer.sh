@@ -8,14 +8,14 @@
 # https://en.wikipedia.org/wiki/Pomodoro_Technique
 
 # Define time spans
-# POMODORO=1500
-# SHORT_BREAK=300
-# LONG_BREAK=1800
+POMODORO=1500
+SHORT_BREAK=300
+LONG_BREAK=1800
 
 # Testing
-POMODORO=1
-SHORT_BREAK=1
-LONG_BREAK=1
+# POMODORO=1
+# SHORT_BREAK=1
+# LONG_BREAK=1
 
 # Define sessions before taking a long break
 POMODOROS_TILL_LONG_BREAK=4
