@@ -7,15 +7,21 @@
 # after the tomato-shaped kitchen timer that Cirillo used as a university student.
 # https://en.wikipedia.org/wiki/Pomodoro_Technique
 
+################
+
+# Testing       
+# POMODORO=1     
+# SHORT_BREAK=1
+# LONG_BREAK=1
+# sessions=4
+
+#########################
+
 # Define time spans
 POMODORO=1500
 SHORT_BREAK=300
 LONG_BREAK=1800
-
-# Testing
-# POMODORO=1
-# SHORT_BREAK=1
-# LONG_BREAK=1
+sessions=4
 
 # Define sessions before taking a long break
 POMODOROS_TILL_LONG_BREAK=4
@@ -112,6 +118,7 @@ long_break() {
   firefox $LONG_BREAK_FINISH &
 }
 
+
 # control when to run what
 run_sessions() {
   i=1
@@ -154,4 +161,32 @@ init() {
 }
 
 # Start program
-init
+#init
+
+
+# while 1 param
+if [[ $# -eq 1 ]]; then
+  # run $1 sessions of default length
+  sessions=$1
+  echo 'running $1 sessions, have fun!'
+  run_sessions
+fi
+
+# if no param
+if [[ $# -eq 0 ]]; then
+  # start with default values
+  echo 'you will be doing 4 pomodoros'
+  run_sessions
+fi
+  
+
+# while option q
+# 
+#   # ask for program's params
+#   ask_for_sessions
+#   echo "Sessions entered: ${sessions}"
+#   ask_for_pomodoro_length
+#   echo "Your pomodoro(s) will have a length of ${POMODORO} seconds."
+#   run_sessions
+# 
+
