@@ -10,18 +10,18 @@
 ################
 
 # Testing
-# POMODORO=1
-# SHORT_BREAK=1
-# LONG_BREAK=1
-# sessions=4
+ POMODORO=1
+ SHORT_BREAK=1
+ LONG_BREAK=1
+ sessions=4
 
 #########################
 
 # Define time spans
-POMODORO=1500
-SHORT_BREAK=300
-LONG_BREAK=1800
-sessions=4
+#POMODORO=1500
+#SHORT_BREAK=300
+#LONG_BREAK=1800
+#sessions=4
 
 # Define sessions before taking a long break
 POMODOROS_TILL_LONG_BREAK=4
@@ -58,7 +58,7 @@ echo_time() {
 usage() {
   echo -e "This is an implementation of the ${RED_BOLD}pomodoro${ENDC}
   technique, a time management method."
-  echo 'It will interupt your work every 25 minutes and ask you to take a five minute break, four times in a row. (2h in total).'
+  echo 'It will interrupt your work every 25 minutes and ask you to take a 5 minute break, four times in a row. (2h in total).'
   echo -e "If you want to change the amount of intervals, pass it a number
   between 0 and 9. There is also an option to tune the interval length.\n"
   echo -e "Usage: pomodoro [options] [arguments]\n"
