@@ -27,11 +27,12 @@ sessions=4
 POMODOROS_TILL_LONG_BREAK=4
 
 # Filepaths to html notifiers
-SHORT_BREAK_START="${HOME}/PROGRAMMING/pomodoro/html/break_start.html"
-SHORT_BREAK_FINISH="${HOME}/PROGRAMMING/pomodoro/html/break_finish.html"
-LONG_BREAK_START="${HOME}/PROGRAMMING/pomodoro/html/long_break_start.html"
-LONG_BREAK_FINISH="${HOME}/PROGRAMMING/pomodoro/html/long_break_finish.html"
-ALL_POMODOROS_FINISHED="${HOME}/PROGRAMMING/pomodoro/html/finish.html"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SHORT_BREAK_START="${SCRIPT_DIR}/html/break_start.html"
+SHORT_BREAK_FINISH="${SCRIPT_DIR}/html/break_finish.html"
+LONG_BREAK_START="${SCRIPT_DIR}/html/long_break_start.html"
+LONG_BREAK_FINISH="${SCRIPT_DIR}/html/long_break_finish.html"
+ALL_POMODOROS_FINISHED="${SCRIPT_DIR}/html/finish.html"
 
 # Style output
 ERROR='\033[91m'
